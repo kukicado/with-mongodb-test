@@ -27,10 +27,12 @@ if (!cached) {
 
 export async function connectToDatabase() {
   if (cached.conn) {
+    console.log('cached');
     return cached.conn
   }
 
   if (!cached.promise) {
+    console.log('NOT cached');
     const opts = {
       useNewUrlParser: true,
       useUnifiedTopology: true,
